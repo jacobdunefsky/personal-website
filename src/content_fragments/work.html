@@ -1,0 +1,47 @@
+<div class="content_area">
+	<h2>Work.</h2>
+	<hr/>
+	<p>On this page, you may find an overview of some of my work experience as a programmer.</p>
+</div>
+
+<div class="content_area">
+	<h3>Research Intern with Yale University FLINT Group</h3>
+	<h4>February 2021 to September 2021</h4>
+	<hr/>
+	<p>During my gap semester and into the summer of 2021, I worked as a research intern with the FLINT Group at Yale University, whose overall mission is "to develop a novel and practical programming infrastructure for constructing large-scale certified systems software".</p>
+	<p>One area in which such certified systems is incredibly important is the field of autonomous vehicles, since even the slightest bug in software controlling a self-driving car can result in a tragedy. Therefore, the FLINT group is taking steps to utilize their certifiable software framework in the development of self-driving car systems. It was here that I made my contributions as research intern.</p>
+	<p>To begin with, the basic self-driving car system had to be developed. I thus implemented an autonomous vehicle controller in Python using OpenCV, which controlled a car simulated with the CARLA simulator. This controller was capable of automatically navigating between two user-chosen points on a highway, following lanes and changing lanes at the appropriate time.</p>
+	<p>Once this foundation was developed, it was time to add safety guarantees. This came in the form of a safety controller which would be running within an ARM TrustZone Secure World. The safety controller needed to be able to detect when the car was located too close to an obstacle; if such an obstacle was detected, then the safety controller would cut the throttle and deploy the brakes.</p>
+	<p>In addition to the work of writing the safety controller itself, I had to figure out how to get the data from CARLA (the simulator) to the safety controller, and how to get the commands from the safety controller to CARLA. This entailed:</p>
+	<ul>
+		<li>finding a compact data format that allowed the necessary data to be transmitted over a UART cable,</li>
+		<li>figuring out how to write this data from a Linux userland program to a QEMU emulated UART,</li>
+		<li>writing driver code to read and write via this emulated UART,</li>
+		<li>and writing code to make this data available to the userland safety controller.</li>
+	</ul>
+	<p>In the end, I was able to go deep into the weeds of writing systems code (even modifying QEMU source in order to fix one particularly nasty bug). For this reason, I was grateful to have this opportunity to apply the knowledge I learned in classes like Operating Systems and Self-Driving Cars, in a research setting.</p>
+</div>
+
+<div class="content_area">
+	<h3>Backend Developer with Yale Entrepeneurial Society</h3>
+	<h4>February 2021 to September 2021</h4>
+	<hr/>
+	<p>I worked as a backend developer with the "YES Internships" team of Yale Entrepeneurial Society, a team of Yale students who have been developing a website that connects budding entrepreneurs with startups seeking interns. Already, the website has been in use at universities including Yale, Harvard, Princeton, UPenn, and Columbia.</p>
+	<p>As backend developer, my role was to develop, maintain, and take ownership of APIs written in Python, using AWS and Serverless technology, such as DynamoDB, Cognito, S3, and Lambda. This entailed writing out specs based on the requirements of the other subteams, such as frontend and design, and then implementing those specs.</p>
+	<p>One of the APIs which I built out was responsible for managing partner organizations from other university campuses. For this API, I wrote extensive documentation, targeted not just towards other developers on the YES Internships team, but also towards non-technical recruiters. I also developed an API which manages recruiters and startups, intended to replace a previous Google Forms-based solution.</p>
+	<p>During my time with the YES Internships, I was able to not just experience the fast-paced development culture of a startup, but also work as a part of a talented team of developers, designers, and managers.</p>
+</div>
+
+<div class="content_area">
+	<h3>Research Intern at Burke Medical Research Institute</h3>
+	<h4>June 2016 to January 2020</h4>
+	<hr/>
+	<p>Throughout high school and into my first year of college, I developed from scratch WellPATH, an Android application used in clinical trials by Stanford, Johns Hopkins, and Weill-Cornell psychologists to reduce suicidal ideation in elderly patients. This entailed continuously working hand-in-hand with a team of psychologists (non-technical domain experts) in order to translate their requirements into the actual mobile application.</p>
+	<p>The application, designed to be used in conjunction with a regular therapy routine, walks patients through a series of steps which both monitors the user's mental state and provides strategies that could immediately be used to deal with suicidal ideation. Other features included:</p>
+	<ul>
+		<li>a scheduling system, such that at regular intervals, the app checks in with the patient;</li>
+		<li>a file browser, used to integrate video messages from the therapists with the app; and</li>
+		<li>a desktop administrative interface, allowing for usage statistics to be analyzed and configuration to be deployed to multiple devices.</li>
+	</ul>
+	<p>In the end, <a href="./publications.html">a paper was published related to this work</a>. Over the course of my time working on WellPATH, I became more skilled in Android development, obtained experience in communicating with domain experts, maintained and improved a single project over many years &mdash; and most importantly, was able to see how technology can be used for good.</p>
+</div>

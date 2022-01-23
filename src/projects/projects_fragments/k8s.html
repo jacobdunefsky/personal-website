@@ -1,0 +1,12 @@
+{% capture $project_summary %}
+<p>As my final project in my computer networks class, I implemented a CNI plugin which provides networking functionality to a Kubernetes cluster running on Linux nodes. The plugin consisted of two components. One component was the CNI script itself, responsible for assigning IP addresses and setting up veth pairs when a new pod is created. The other component was a setup script, to be run on each node, responsible for ensuring that each node is automatically connected to the same overlay network as the other nodes in the cluster.</p>
+{% endcapture %}
+{% set $is_summary_full "false" %}
+
+<div class="content_area">
+	{% echo $project_summary %}
+
+	<p>In developing the CNI script, I made ample use of two great tutorials: <a href="https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/">one by Kevin Sookocheff</a> and one by <a href="https://www.altoros.com/blog/kubernetes-networking-writing-your-own-simple-cni-plug-in-with-bash/">Siarhei Matsiukevich</a>. In particular, the CNI script resembles that provided by the latter tutorial, although it was reimplemented from first principles rather than copy-pasted, and new features were added (e.g. a dependency on nmap was removed, and a dependence on hardcoded values was replaced with values programmatically obtained from kubectl).</p>
+	<p>However, in developing the setup script, I had to fly completely solo, as both tutorials not only assumed that the cluster was run on a cloud provider's servers, but also that the user would manually set up routing between nodes. The setup script, however, automatically sets up routing without assuming anything about whether a cloud provider is used.</p>
+	<p>Over the course of this project, I not only obtained much hands-on experience with Kubernetes, but I got to dive deep into virtual networking with Linux, using industry-standard systems like network namespaces, veth pairs and bridges, and VXLAN.</p>
+</div>

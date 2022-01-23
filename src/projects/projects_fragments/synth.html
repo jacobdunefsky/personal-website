@@ -1,0 +1,10 @@
+{% capture $project_summary %}
+<p>"synth" is a synthesizer written in C++ using PortAudio and SFML. Instruments include a sine wave, a saw wave with chorus, a square wave with adjustable duty cycle, and multiple bell-like sounds created with additive synthesis. Polyphony is supported, and an oscilloscope view displays the current waveform being output by the synthesizer. A complementary program, "track", allows for the playback with the synthesizer of monophonic melodies, stored in a simple text format.</p>
+{% endcapture %}
+{% set $is_summary_full "false" %}
+
+<div class="content_area">
+<p>"synth" is a synthesizer written in C++ using PortAudio and SFML. Instruments include a sine wave, a saw wave with chorus, a square wave with adjustable duty cycle, and multiple bell-like sounds created with additive synthesis. Adding new instruments in the source code is easily accomplished by extending the Instrument class. Polyphony is supported with five channels by default, although this can be changed easily in the source code. An oscilloscope view displays the current waveform being output by the synthesizer.</p>
+
+<p>An additional program, "track", allows for the storage and playback of monophonic melodies with the synthesizer. Melodies are written as text files in a simple format: each line either contains a "note off" command represented by "=", or two integers which represent the note and octave that should be played. Then, "track" can play back a text file at a tempo specified as a command-line argument.</p>
+</div>

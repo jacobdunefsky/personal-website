@@ -1,0 +1,46 @@
+<div class="content_area">
+	<h2>Academics.</h2>
+	<hr/>
+	<p>On this page, you will find a sample of some of the computer science courses that I have taken, including descriptions of some of the programming projects that I completed for each class.</p>
+</div>
+
+<div class="content_area">
+	<h3>CPSC 434: Topics in Networked Systems</h3>
+	<h4>Fall 2021</h4>
+	<p>A networking course which covered topics including HTTP, TCP, OSPF, BGP, Kubernetes, RAFT, and data center design, among others.</p>
+	<hr/>
+	<h4>Selected Projects</h4>
+	<ul>
+		<li>A <b>high-performance HTTP server</b> written in C++, which used epoll to process concurrent connections. Features included Apache-style configuration files, content negotation based on user agent, conditional transfer with If-Modified-Since and Last-Modified, CGI support, caching, and chunked encoding.</li>
+		<li>A <b>TCP implementation</b>. In addition to basic sliding window reliabile transport, the entire TCP state machine was implemented, along with connection multiplexing, TCP Reno rate control, and TCP CUBIC flow control.</li>
+	</ul>
+</div>
+
+<div class="content_area">
+	<h3>LING 380: Topics in Computational Linguistics: Neural Network Models of Linguistic Structure</h3>
+	<h4>Fall 2021</h4>
+	<p>A natural language processing (NLP) course. Fundamental concepts in modern deep learning were derived, and network architectures such as RNNs, LSTMs, and Transformers were presented. The use of neural networks in tackling linguistic questions was emphasized through discussion of published papers.</p>
+	<hr/>
+	<h4>Selected Projects</h4>
+	<ul>
+		<li>A <b>multilayer perceptron</b> written in Python without the aid of any libraries. Backpropagation code for each type of layer was written by hand. The model was then trained on a part-of-speech tagging dataset.</li>
+		<li>An <b>RNN part-of-speech tagger</b> written in Python with PyTorch. The architecture could be configured to be based upon RNN cells, GRU cells, or LSTM cells. The embeddings produced by the network were analyzed in a linguistic context.</li>
+	</ul>
+</div>
+
+<div class="content_area">
+	<h3>CPSC 522: Design and Implementation of Operating Systems</h3>
+	<h4>Fall 2020</h4>
+	<p>"This course covers the fundamentals of operating system design and implementation. Lectures present the central ideas and concepts (e.g., synchronization, deadlock, process management, storage management, file systems, security, protection, and networking) and explain how they are manifested in practical operating systems. Students will be working on a series of six programming assignments leading to a small but real operating system."</p>
+	<hr/>
+	<h4>Selected Projects</h4>
+	<ul>
+		<li>A physical memory management system which manages the allocation and deallocation of physical pages of memory.</li>
+		<li>An implementation of virtual memory management with paging.</li>
+		<li>A process/thread management system supporting fork with copy-on-write.</li>
+		<li>A trap handler responsible for taking care of syscalls, interrupts, and exceptions.</li>
+		<li>An implementation of symmetric multiprocessing support, via the use of synchronization primitives in core kernel code.</li>
+		<li>An implementation of directory inodes, path resolution, and syscalls for a filesystem. A basic shell, including file manipulation commands, was implemented to test the filesystem.</li>
+		<li>An implementation of graphics using VESA BIOS extensions. Resolution data is obtained and kept track of in the kernel, allowing for resolution-independent code to be written. A window manager was then implemented, which communicates with userland programs via syscalls. Userland graphics programs could get user input based on the current window in focus, and the user can move windows around on the screen and switch between windows. To demonstrate the power of the graphical system, an image viewer was written, which displayed a bitmap of Van Gogh's "The Starry Night".</li>
+	</ul>
+</div>

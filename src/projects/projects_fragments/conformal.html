@@ -1,0 +1,8 @@
+{% capture $project_summary %}
+<p>A Python script that visualizes functions on the complex plane as conformal transformations of any given image. Given a function f(z)=f(x+yi) and an image, the Python script computes the transformation of the image according to the function as follows: pixel (x, y) in the output image has the color of pixel f(x+yi) in the original image. Thus, conformal mapping provides a useful way to visualize, in two dimensions, the behavior of a complex function.</p>
+{% endcapture %}
+{% set $is_summary_full "true" %}
+
+<div class="content_area">
+{% echo $project_summary %}
+</div>

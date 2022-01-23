@@ -1,0 +1,7 @@
+name,date,code,filename
+Kubernetes networking plugin,December 2021,https://github.com/jacobdunefsky/k8s-test-net,k8s
+Investigating Embeddings of Czech Nouns by Case,December 2021,https://github.com/jacobdunefsky/transformercase,nlp
+bastet: BAsic Static TEmplating sysTem,Summer 2021,https://github.com/jacobdunefsky/bastet,bastet
+StudyUp,Spring 2021,,studyup
+Conformal mapper,2018,https://github.com/jacobdunefsky/conformal,conformal
+Synthesizer,2018,https://github.com/jacobdunefsky/synth,synth

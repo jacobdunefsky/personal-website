@@ -1,0 +1,12 @@
+{% capture $project_summary %}
+<p>A small static templating system that I built on the side over the summer of 2021. Supports includes, variables, conditionals, foreach loops, lists, CSV tables, among other features. Lightweight enough to fit in a single Python 3 file.</p>
+{% endcapture %}
+{% set $is_summary_full "false" %}
+
+<div class="content_area">
+{% echo $project_summary %}
+
+<p>bastet's most... interesting design choice is that it enables (and encourages) the user to combine the build system with the templates itself. It does this through the use of block statements like "output" (which evaluates all statements within the block and redirects the output to a given file), "capture" (which evaluates all statements within the block and stores the output in a variable), and "suppress" (which evaluates all statements within the block, discards all output, but makes any variables defined accessible in the broader scope).</p>
+
+<p>Note that this homepage itself, as discussed <a href="./about.html">on the About page</a>, is built with bastet. Its source code thus provides a good example of how to make use of bastet's unorthodox features to build a static website with a complex architecture.</p>
+</div>

@@ -1,0 +1,204 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Jacob Dunefsky's personal page</title>
+	<style>
+		html {
+			box-sizing: border-box;
+
+			height: 100%;
+			margin: 0;
+		}
+
+		body {
+			background: rgb(49,8,116);
+			background-color: rgb(49,8,116);
+			background: linear-gradient(180deg, rgba(49,8,116,1) 0%, rgba(0,0,0,1) 100%);
+			transform: translate3d(0,0,0);
+			background-attachment: fixed;
+
+			display: flex;
+			align-items: center;
+
+			height: 100%;
+			max-height: 100%;
+
+			margin: 0;
+		}
+
+		.mainFrame {
+			background-color: #281f28;
+			width: 80%;
+			margin: auto;
+
+			border-style: solid;
+			border-width: 2px;
+			border-color: #b000f0;
+
+			display: flex;
+			align-content: center;
+			
+			padding-top: 5%;
+			padding-bottom: 5%;
+
+			overflow: hidden;
+		}
+
+		.mainCard {
+			background-color: white;
+
+			margin: auto;
+			padding: 5%;
+
+			box-shadow: 0px 0px 20px 5px #56CEEF;
+			display: flex;
+			align-content: center;
+			justify-content: space-around;
+			flex-wrap: wrap-reverse;
+		}
+
+		.myFace {
+			max-height: 44.8vh;
+			max-width: 44.8vw;
+			display: block;
+			object-fit: scale-down;
+		}
+
+		.rightColumn{
+			height: 44.8vh;
+			margin-top: auto;
+			margin-bottom: auto;
+			display: flex;
+			flex-direction: column;
+			max-width: 50%;
+		}
+
+		.leftColumn{
+			max-height: 44.8vh;
+			/*max-width: 44.8vw;*/
+			max-width: 50%;
+			margin-top: auto;
+			margin-bottom: auto;
+			display:flex;
+			flex-direction: column;
+
+		}
+
+		.mainInfo {
+			height: 80%;
+			border-style: solid;
+			border-color: black;
+			padding: 5;
+			text-align: center;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.myName {
+			font-size: 40pt;
+		}
+
+		.links {
+			text-align: center;
+		}
+
+		.link {
+			text-decoration: none;
+			color: inherit;
+		}
+		.link:hover {
+			color: azure;
+			text-shadow: 1px 0 0 black, 0 1px 0 black, -1px 0 0 black, 0 -1px 0 black;
+		}
+
+		@media (max-width: 531px), (orientation: portrait){
+			.mainInfo {
+				height: auto;
+			}
+			.mainFrame {
+				width: 100%;
+				height: 100%;
+				background-color: transparent;
+				padding: 0;
+			}
+
+			.mainCard {
+				background-color: transparent;
+				box-shadow: none;
+				flex-direction: column-reverse;
+				align-items: center;
+				justify-content: space-evenly;
+				height: 100%;
+				padding-top: 0; padding-bottom: 0;
+			}
+
+			.myFace {
+				border-style: dashed;
+				box-shadow: 5px 5px 10px #000000;
+				margin-bottom: 10px;
+			}
+
+			.leftColumn {
+				background-color: white;
+				max-width: 80%;
+				max-height: none;
+
+				padding: 2%;
+				box-shadow: 0px 0px 30px 1px #56CEEF;
+
+			}
+
+			.rightColumn {
+				background-color: white;
+				max-width: 100%;
+				height: auto;
+				padding: 5%;
+				border-radius: 5px;
+				box-shadow: 0px 0px 30px 1px #56CEEF;
+			}
+
+		}
+
+		@media screen and (max-height: 467px) {
+			.mainFrame {
+				padding-bottom: 2.5%;
+				padding-top: 2.5%;
+			}
+
+			.rightColumn {
+				height: 53vh;
+			}
+		}
+
+		@media screen and (max-height: 410px) {
+			.mainFrame {
+				padding: 0;
+			}
+
+			.rightColumn {
+				height: 70vh;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="mainFrame">
+		<div class="mainCard">
+			<div class="leftColumn">
+				<img src="./data/myface.jpg" class="myFace"/>
+				<div style="text-align: center"><b><i>Fig 1:</i></b> the man in question</div>
+			</div>
+			<div class="rightColumn">
+				<div class="mainInfo">
+					<div class="myName">&nbsp;jacob dunefsky</div>
+					<div class="myDesc">programmer, researcher, and student -- among other things</div>
+				</div>
+				{% include "src/templates/links.html" %}
+			</div>
+		</div>
+	</div>
+</body>

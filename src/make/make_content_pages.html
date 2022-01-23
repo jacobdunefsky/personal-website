@@ -1,0 +1,12 @@
+{% set $contents_dir "src/content_fragments/" %}
+
+{% set $content_names list("about", "projects", "academics", "work", "publications") %}
+
+{% for $name in $content_names %}
+	{% echo ("Working on "+$name+"!") %}
+	{% set $content_filename ($contents_dir+$name+".html") %}
+	{% set $out_filename ($out_dir+$name+".html") %}
+	{% output $out_filename %}
+		{% include ($template_dir+"content_template.html") %}
+	{% endoutput %}
+{% endfor %}

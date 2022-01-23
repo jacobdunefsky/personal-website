@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="./styles/content.css"/>
+		<title>{% echo $name %} | Jacob Dunefsky's personal page</title>
+	</head>
+	<body>
+			<div class="header">
+				<a class="header_name" href="./index.html">jacob dunefsky</a>
+				{% include "src/templates/links.html" %}
+			</div>
+			<div class="main_column">
+				{% echo $content_string %}
+			</div>
+	</body>
+</html>

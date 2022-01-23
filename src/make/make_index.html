@@ -1,0 +1,6 @@
+{% echo ("Working on index!") %}
+{% set $content_filename ($contents_dir+"index.html") %}
+{% set $out_filename ($out_dir+"index.html") %}
+{% output $out_filename %}
+	{% include ($template_dir+"index.html") %}
+{% endoutput %}

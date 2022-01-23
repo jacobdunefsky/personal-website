@@ -1,0 +1,50 @@
+<div class="content_area">
+	<h2>Projects.</h2>
+	<hr/>
+	<p>On this page, you will find a selection of various programming projects that I've completed over the years.</p>
+</div>
+
+{% set $projects table_load("src/projects/projects_table.csv") %}
+{% for $project in $projects %}
+<div class="content_area">
+	<h3>{% echo $project.name %}</h3>
+	{% if (($project.date)!="") %}<h4>{% echo $project.date %}</h4>{% endif %}
+	{% if (($project.code)!="") %}<p><b>Source code:</b> <a class="srclink" href="{% echo $project.code %}">{% echo $project.code %}</a></p>{% endif %}
+
+	{% set $project_frag_filename "src/projects/projects_fragments/"+($project.filename)+".html" %}
+
+	{% suppress %}
+		{% include $project_frag_filename %}
+
+		This loads $project_summary, a variable defined in each project template, which provides a summary to be output on this page.
+
+		This also loads $is_summary_full. When 1, this variable means that we shouldn't add a "Read more" link to the individual project page. When 0, this variable means that we should.
+	{% endsuppress %}
+	{% echo $project_summary %}
+	{% if $is_summary_full == "false" %}
+		{% set $project_output_filename "build/"+($project.filename)+"_project.html" %}
+
+		{% capture $content_string %}
+			<div class="content_area">
+				<h2>{% echo $project.name %}.</h2>
+				{% if (($project.date)!="") %}<p><i>{% echo $project.date %}</i></p>{% endif %}
+				{% if (($project.code)!="") %}<p><i>Source code:</i> <a href="{% echo $project.code %}">{% echo $project.code %}</a></p>{% endif %}
+				<hr/>
+				<p><a href="./projects.html">Back to all projects</a></p>
+			</div>
+
+			{% include $project_frag_filename %}
+		{% endcapture %}
+
+		{% output $project_output_filename %}
+			{% include "src/templates/content_string_template.html" %}
+		{% endoutput %}
+
+		<p><b>Read more:</b>
+			<a href="{% echo "./"+($project.filename)+"_project.html" %}">
+				{% echo $project.name %}
+			</a>
+		</p>
+	{% endif %}
+</div>
+{% endfor %}

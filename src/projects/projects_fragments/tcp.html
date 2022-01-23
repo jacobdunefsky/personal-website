@@ -1,0 +1,5 @@
+{% capture $project_summary %}
+<p>In my computer networks class, we were assigned to write an implementation of TCP. At the end of this project, my implementation supported multiplexing based on connection tuples, the full TCP state machine, reliability based on sliding windows, and various rate control algorithms, including Karn's Algorithm/Jacobson's Algorithm, TCP Reno rate control, and TCP CUBIC rate control.</p>
+{% endcapture %}
+{% set $is_summary_full "true" %}
+{% echo $project_summary %}
