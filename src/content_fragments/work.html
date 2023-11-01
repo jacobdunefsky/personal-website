@@ -1,7 +1,39 @@
 <div class="content_area">
 	<h2>Work.</h2>
 	<hr/>
-	<p>On this page, you may find an overview of some of my work experience as a programmer.</p>
+	<p>On this page, you may find an overview of some of my work experience in software engineering, computer science research, and more.</p>
+</div>
+
+<div class="content_area">
+	<h3>Research Intern at IBM Research in Hybrid Cloud</h3>
+	<h4>May 2023 to August 2023</h4>
+	<hr/>
+	<p>During the summer of 2023, I returned to IBM Research in the Hybrid Cloud division as an intern at IBM Research in the Hybrid Cloud division. There, I developed a set of benchmarks that simulated computationally-intensive optical proximity correction workloads in automated chip design. I designed and carried out experiments in order to determine the data-flow and control-flow architectures that are most efficient for this type of workload; this entailed deploying the benchmark systems on an OpenShift cluster using Kubernetes.</p>
+	<p>Developing these benchmarks required, in addition to distributed systems programming skills, the ability to step back and think through the space of possible architectures from a theoretical perspective. Doing so yielded a set of axes along which different possible architectures -- each corresponding to a different sort of workload -- could vary. The result of this was a principled understanding of the tradeoffs incurred by different architectures for different workloads, along with an understanding of which architectures were Pareto-dominated by others.</p>
+	<p>I very much appreciated having the opportunity to work on this project: it both allowed me to get my hands dirty building and deploying distributed systems, and also gave me the chance to engage with more theoretical work.</p>
+</div>
+
+<div class="content_area">
+	<h3>Research Intern at IBM Research in Hybrid Cloud</h3>
+	<h4>May 2022 to August 2022</h4>
+	<hr/>
+	<p>During the summer of 2022, I was fortunate to be able to work as an intern at IBM Research in the Hybrid Cloud division. The project on which I primarily worked was to develop a debugger for KAR, a runtime framework being developed currently at IBM.</p>
+	<p>KAR aims to make it easier for developers to build reliable distributed applications. The runtime implements an actor model, in which various components of the application are realized as single-threaded actors which communicate via message-passing. Features that KAR provides include automatic safety-preserving retries of failed message invocations, automatic actor routing, persistent state, reconciliation on node failure, and more.</p>
+	<p>When developing a KAR application, traditional logging and tracing tools for distributed systems can be used to aid in debugging. But, to our knowledge, none of these tools provide the functionality and experience of a traditional debugger, where one sets breakpoints, pauses the application, and inspects/modifies state in real-time. The debugger that I worked on this summer, however, does provide such an experience; we believe that it is the <i>first such debugger for distributed applications</i>.</p>
+	<p>Features of the debugger include, but are not limited to, the following:</p>
+	<ul>
+		<li>Users can set breakpoints on method invocations (and method returns) based on complex conditions on the arguments/return values of the method.</li>
+		<li>Breakpoints can have different user-specified behaviors (e.g. pause only the actor that triggered the breakpoint; pause the entire node; pause the entire application).</li>
+		<li>Users can view information about currently in-flight invocations along with historical invocations. This information can be filtered based on a query language.</li>
+		<li>Users can single-step through call chains, with similar semantics to those of a traditional debugger.</li>
+		<li>The debugger can detect deadlocks in the application; it will print out the resource dependency cycle responsible for the deadlock.</li>
+		<li>Easy deployment as a part of a Kubernetes cluster along with the rest of the application.</li>
+		<li>Modularity and support for file formats such as JSON that allow for use in shell scripts.</li>
+	</ul>
+	<p>Developing this debugger required crafting an architecture that allowed for a traditional debugger UX, while accounting for the asynchronous flow of events and cloud deployment requirements. The final architecture consists of debugger code in the KAR runtime itself, which speaks to a debugger server running inside of the application cluster. Then, the user sends debugger client commands from their local machine, which are processed by the debugger server.</p>
+	<p>The debugger is already available as a part of the <a href="github.com/IBM/kar">public KAR Github repository</a>. Working on this project -- in addition to exercising my system-building skills, allowing me to engage with distributed systems problems, exposing me to technologies such as Kafka and WebSockets, and helping me practice my ability to design a solid user experience -- also gave me experience in producing an end-to-end product which can be integrated as a part of a larger codebase.</p>
+	<p>Overall, I am grateful to have been able to work on the KAR debugger, and grateful to my manager and teammates (Edward Epstein, David Grove, Olivier Tardieu) for the help that they provided. I believe that the KAR debugger can embody a new paradigm for debugging distributed applications.</p>
+
 </div>
 
 <div class="content_area">
